@@ -1,0 +1,300 @@
+/* main.css */
+
+/* Reset de estilos padrão do corpo da página */
+body {
+  font-family: 'Arial', sans-serif;
+  /* Define a fonte padrão para o corpo da página */
+  margin: 0;
+  /* Remove as margens padrão do corpo */
+  padding: 0;
+  /* Remove o preenchimento padrão do corpo */
+  cursor: url("../assets/cursor/yugicursor.png"), default;
+
+}
+
+button,
+a,
+img:hover,
+button:hover,
+a:hover {
+  cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
+}
+
+/* Estilo para o vídeo de fundo */
+.bg-video {
+  position: absolute;
+  /* Posiciona o vídeo absolutamente em relação ao seu contêiner */
+  z-index: -2;
+  /* Define uma camada de z-index menor para que fique abaixo de outros elementos */
+  width: 100%;
+  /* Ocupa toda a largura disponível */
+  height: 100%;
+  /* Ocupa toda a altura disponível */
+  overflow: hidden;
+  /* Oculta qualquer conteúdo que transbordar do contêiner */
+  display: flex;
+  /* Permite o uso de flexbox */
+  justify-content: center;
+  /* Centraliza o conteúdo horizontalmente */
+}
+
+/* Estilo para o elemento de vídeo dentro do contêiner de vídeo */
+.bg-video .video {
+  width: 100%;
+  /* Ocupa toda a largura do contêiner */
+  height: 100%;
+  /* Ocupa toda a altura do contêiner */
+  object-fit: cover;
+  /* Cobrirá completamente o contêiner, mantendo a proporção da imagem */
+}
+
+/* Adiciona uma sobreposição graduada sobre o vídeo para tornar o texto mais legível */
+.bg-video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.6) 100%);
+}
+
+/* Estilo para o contêiner principal */
+.container {
+  display: flex;
+  /* Usa flexbox para organizar os elementos internos */
+  height: 100vh;
+  /* Ocupa 100% da altura da janela do navegador */
+}
+
+/* Estilo para a parte esquerda do contêiner principal */
+.container__left {
+  width: 35%;
+  /* Define a largura da parte esquerda */
+  min-width: 300px;
+  /* Define a largura mínima para garantir uma aparência adequada em telas menores */
+  display: flex;
+  /* Usa flexbox para organizar os elementos internos */
+  flex-direction: column;
+  /* Organiza os elementos verticalmente */
+  align-items: center;
+  /* Centraliza os elementos horizontalmente */
+  justify-content: space-around;
+  /* Distribui uniformemente os elementos ao longo do eixo principal */
+}
+
+/* Estilo para o contêiner do versus */
+.card-versus__container {
+  display: flex;
+  /* Usa flexbox para organizar os elementos internos */
+  flex-direction: column;
+  /* Organiza os elementos verticalmente */
+  align-items: center;
+  /* Centraliza os elementos horizontalmente */
+  justify-content: center;
+  /* Centraliza os elementos verticalmente */
+  padding-top: 0.1rem;
+  /* Adiciona algum espaço acima do contêiner */
+  height: 300px;
+  /* Define a altura do contêiner */
+  width: 100%;
+  /* Ocupa 100% da largura disponível */
+}
+
+/* Estilo para esconder suavemente o contêiner do versus */
+.card-versus__container.hidden {
+  opacity: 0;
+  /* Torna o contêiner completamente transparente */
+  pointer-events: none;
+  /* Desativa a interação do usuário com os elementos dentro do contêiner */
+  transform: translate(0);
+  /* Mantém a posição após a transição */
+  transition: opacity 0.5s,
+    transform 0s 0.5s;
+  /* Adiciona uma transição suave com um atraso para a transformação */
+}
+
+/* Estilo para as seções superior e inferior do versus */
+.versus-top,
+.versus-bottom {
+  display: flex;
+  /* Usa flexbox para organizar os elementos internos */
+  align-items: center;
+  /* Centraliza os elementos verticalmente */
+  justify-items: center;
+  /* Centraliza os elementos horizontalmente */
+  border: 1px solid blue;
+  /* Adiciona uma borda sólida azul */
+}
+
+.versus-bottom {
+  margin-top: 1rem;
+  /* Adiciona algum espaço acima da seção inferior */
+}
+
+/* Estilo para a parte direita do contêiner principal */
+.container__right {
+  width: 65%;
+  /* Define a largura da parte direita */
+  display: flex;
+  /* Usa flexbox para organizar os elementos internos */
+  flex-direction: column;
+  /* Organiza os elementos verticalmente */
+  align-items: center;
+  /* Centraliza os elementos horizontalmente */
+  justify-content: center;
+  /* Centraliza os elementos verticalmente */
+}
+
+/* Estilo para a caixa de pontuação */
+.score_box {
+  background-color: #fff;
+  /* Define a cor de fundo como branco */
+  padding: 30px;
+  /* Adiciona algum preenchimento interno */
+  width: 90%;
+  /* Ocupa 90% da largura disponível */
+  margin-top: 2rem;
+  /* Adiciona algum espaço acima da caixa de pontuação */
+}
+
+/* Estilo para a moldura */
+.frame {
+  border: 3px solid #000;
+  /* Adiciona uma borda sólida preta */
+  border-radius: 5px;
+  /* Adiciona uma borda arredondada */
+  width: 90%;
+  /* Ocupa 90% da largura disponível */
+  margin-top: 1rem;
+  /* Adiciona algum espaço acima da moldura */
+}
+
+/* Estilo para os detalhes da carta */
+.card_details {
+  background-color: #fff;
+  /* Define a cor de fundo como branco */
+  padding: 1rem;
+  /* Adiciona algum preenchimento interno */
+  display: flex;
+  /* Usa flexbox para organizar os elementos internos */
+  flex-direction: column;
+  /* Organiza os elementos verticalmente */
+  align-items: center;
+  /* Centraliza os elementos horizontalmente */
+  justify-content: space-between;
+  /* Distribui uniformemente os elementos ao longo do eixo principal */
+  height: 6rem;
+  /* Define a altura do contêiner de detalhes da carta */
+  width: 90%;
+  /* Ocupa 90% da largura disponível */
+}
+
+#card-name {
+  font-size: 1.1rem;
+  /* Define o tamanho da fonte */
+}
+
+#card-type {
+  font-size: 1rem;
+  /* Define o tamanho da fonte */
+}
+
+/* Estilo para o contêiner da caixa de cartas */
+.card-box__container {
+  height: 100vh;
+  /* Ocupa 100% da altura da janela do navegador */
+  display: flex;
+  /* Usa flexbox para organizar os elementos internos */
+  flex-direction: column;
+  /* Organiza os elementos verticalmente */
+  justify-content: center;
+  /* Centraliza os elementos verticalmente */
+  align-items: center;
+  /* Centraliza os elementos horizontalmente */
+  padding: 0.3rem;
+  /* Adiciona algum preenchimento interno */
+  margin-top: 2rem;
+  /* Adiciona algum espaço acima do contêiner de caixa de cartas */
+  width: 90%;
+  /* Ocupa 90% da largura disponível */
+}
+
+/* Estilo para a caixa de cartas */
+.card-box {
+  height: 12rem;
+  /* Define a altura da caixa de cartas */
+  width: 70%;
+  /* Define a largura da caixa de cartas */
+  display: flex;
+  /* Usa flexbox para organizar os elementos internos */
+  flex-direction: row;
+  /* Organiza os elementos horizontalmente */
+  align-items: center;
+  /* Centraliza os elementos verticalmente */
+  justify-content: space-around;
+  /* Distribui uniformemente os elementos ao longo do eixo principal */
+
+}
+
+/* Estilo para a carta no campo de jogo */
+.card-infield {
+  height: 11.2rem;
+  /* Define a altura da carta no campo de jogo */
+  width: 10rem;
+  /* Define a largura da carta no campo de jogo */
+  border-radius: 8px;
+  /* Adiciona uma borda arredondada */
+  display: flex;
+  /* Usa flexbox para organizar os elementos internos */
+  flex-direction: column;
+  /* Organiza os elementos verticalmente */
+  align-items: center;
+  /* Centraliza os elementos horizontalmente */
+  justify-content: space-around;
+  /* Distribui uniformemente os elementos ao longo do eixo principal */
+  border: 1px solid white;
+}
+
+/* Estilo para o botão "Próximo Duelo" */
+#next-duel {
+  display: flex;
+  /* Usa flexbox para organizar os elementos internos */
+  align-items: center;
+  /* Centraliza os elementos verticalmente */
+  justify-content: center;
+  /* Centraliza os elementos horizontalmente */
+  margin-top: 1rem;
+  /* Adiciona algum espaço acima do botão */
+  width: 90%;
+  /* Ocupa 90% da largura disponível */
+
+}
+
+/* Estilo para os sprites da carta */
+.card_sprites {
+  text-align: center;
+  /* Centraliza o texto horizontalmente */
+  width: 90%;
+  /* Ocupa 90% da largura disponível */
+}
+
+/* Estilo para a carta com efeito de escala ao passar o mouse */
+.card {
+  transition: transform 0.2s;
+  /* Adiciona uma transição suave ao efeito de escala */
+}
+
+.card:hover {
+  transform: scale(1.2);
+  /* Aumenta a escala ao passar o mouse sobre a carta */
+}
+
+/* Estilo para depuração (borda vermelha) */
+.debug {
+  border: 1px solid red;
+  /* Adiciona uma borda sólida vermelha para fins de depuração */
+}
