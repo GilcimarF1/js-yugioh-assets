@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo Yu-Gi-Oh!</title>
+
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="./src/styles/reset.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./src/styles/buttons.css">
+  <link rel="stylesheet" href="./src/styles/containers_and_frames.css">
+  <link rel="stylesheet" href="./src/styles/main.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="shortcut icon" href="./src/assets/favicon/Favicon.ico" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <audio id="bgm" loop>
+    <source src="./src/assets/audios/Saint Seiya - Opening 1 - Pegasus Fantasy.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- Contêiner do vídeo de fundo -->
+  <div class="bg-video">
+    <video class="video" autoplay loop muted>
+      <source src="./src/assets/video/yugi.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Contêiner principal -->
+  <div class="container">
+
+    <!-- Contêiner esquerdo -->
+    <div class="container__left framed-golden-2">
+      <!-- Caixa de pontuação -->
+      <div class="score_box frame">
+        <span id="score_points">Win: 0 | lose: 0</span>
+      </div>
+      <!-- Avatar do menu -->
+      <div class="menu_avatar"><img id="card-image"></div>
+      <!-- Detalhes da carta -->
+      <div class="card_details frame">
+        <p id="card-name">Selecione</p>
+        <p id="card-type">uma carta</p>
+      </div>
+    </div>
+
+    <!-- Contêiner direito -->
+    <div class="container__right">
+      <!-- Contêiner da caixa de cartas -->
+      <div class="card-box__container">
+        <!-- Caixa de cartas do computador -->
+        <div class="card-box framed" id="computer-cards"></div>
+
+        <!-- Contêiner do versus -->
+        <div class="card-versus__contanier">
+          <!-- Seção superior do versus -->
+          <div class="versus-top">
+            <!-- Carta no campo do jogador -->
+            <div class="card-infield">
+              <img id="player-field-card" height="180vh" width="125vw">
+            </div>
+            <!-- Imagem do Millennium -->
+            <img height="100px" src="./src/assets/icons/millenium2.png">
+            <!-- Carta no campo do computador -->
+            <div class="card-infield">
+              <img id="computer-field-card" height="180px" width="125px">
+            </div>
+          </div>
+
+          <!-- Seção inferior do versus -->
+          <div class="versus-bottom">
+            <!-- Botão "Pronto" -->
+            <button id="next-duel" class="rpgui-button" onclick="resetDuel()">CLIQUE</button>
+          </div>
+        </div>
+
+        <!-- Caixa de cartas do jogador -->
+        <div class="card-box framed" id="player-cards"></div>
+      </div>
+    </div>
+
+  </div>
+
+  </div>
+  <!-- Script JavaScript -->
+  <script src="./src/scripts/engine.js" defer></script>
+</body>
+
+</html>
